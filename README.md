@@ -144,13 +144,14 @@ El modelo sigue un diseño en **Esquema en Estrella (*Star Schema*)** para garan
 
 * **Abre el archivo .pbix con Power BI Desktop.**
 
-* **Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.**
+* Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.
 
 ##👤 Autor & Contacto
-**Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.**
 
-* **GitHub: @mikevargasrc**
+Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.
 
-* **LinkedIn: Maykol Anthony Vargas Bringas**
+* **GitHub:** @mikevargasrc
 
-* **Email: maykolvargas98@hotmail.com**
+* **LinkedIn:** Maykol Anthony Vargas Bringas
+
+* **Email:** maykolvargas98@hotmail.com
