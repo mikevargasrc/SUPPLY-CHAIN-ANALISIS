@@ -61,3 +61,96 @@ El reporte consta de 3 secciones principales diseñadas con una navegación flui
 ## 🏗️ Arquitectura y Modelado de Datos
 
 El modelo sigue un diseño en **Esquema en Estrella (*Star Schema*)** para garantizar un rendimiento óptimo en las consultas DAX y facilitar el filtrado cruzado.
+
+## Esquema de Base de Datos
+
+```
++-----------------------+
+|    DIM_PROVEEDORES    |
++-----------------------+
+| PK: cod_prov          |
+|     nom_prov          |
+|     tmp_entrega       |
+|     org_pais          |
++-----------+-----------+
+            |
+            | 1
+            |
+            | *
++-----------------------+     +-----------------------+
+|     DIM_PRODUCTOS     |     |      FACT_ORDENES     |
++-----------------------+     +-----------------------+
+| PK: cod_prod          | 1 * | FK: fecha_odc         |
+|     descrip_prod      +-----+ FK: nro_odc           |
+|     Categoria         |     | FK: cod_prod          |
+|     Subcategoria      |     | FK: cod_prov          |
+|     costo_prod        |     |     cant_prod_odc     |
++-----------------------+     |     prec_unt          |
+                              |     monto_odc         |
+                              |     fecha_entrega     |
+                              |     fecha_recibido    |
+                              |     cant_recibida     |
+                              |     monto_recibido    |
+                              |     estado_odc        |
+                              +-----------------------+
+```
+## 💡 Diccionario de KPIs e Indicadores Clave
+
+| Indicador | Valor en Reporte | Fórmula / Concepto | Justificación de Negocio |
+| :--- | :---: | :--- | :--- |
+| **Monto Comprometido** | **$5,831,145** | `SUM(ORDENES[monto_odc])` | Presupuesto total emitido en órdenes de compra. |
+| **Monto Recibido** | **$5,535,945** | `SUM(ORDENES[monto_recibido])` | Capital efectivamente ingresado a almacén en mercancía. |
+| **OTIF** | **87.6%** | `OnTime % × InFull %` | **On-Time In-Full:** Mide si el pedido llegó completo y a tiempo. |
+| **OnTime** | **87.3%** | `% ODC con fecha_recibido <= fecha_entrega` | Puntualidad de entrega respecto a la fecha pactada. |
+| **InFull** | **100.4%** | `(Cant. Recibida / Cant. Solicitada) × 100` | Precisión del volumen entregado (identifica sobreentregas). |
+| **Lead Time Cumplimiento** | **90.9%** | `% ODC dentro del tiempo de entrega pactado` | Mide la adherencia al acuerdo de nivel de servicio (SLA). |
+| **Cantidad Solicitada** | **11,436** | `SUM(ORDENES[cant_prod_odc])` | Total de unidades pedidas en el periodo. |
+| **Cantidad Recibida** | **11,478** | `SUM(ORDENES[cant_recibida])` | Total de unidades físicas que ingresaron al almacén. |
+| **Proveedores Activos** | **22 de 29** | `DISTINCTCOUNT(ORDENES[cod_prov])` | Mide la utilización efectiva de la base de proveedores (76%). |
+
+---
+
+## 📈 Hallazgos y Análisis Estratégico
+
+1. **Picos de Compra Temporales:**
+   * **Mayo ($922K)**, **Julio ($882K)** y **Octubre ($901K)** representan el **46.3%** del gasto anual. Requieren planificación anticipada de flujo de caja.
+2. **Productos de Mayor Impacto financiero:**
+   * La línea de muebles lidera el gasto: **LIVING M ($687,680)** y **LIVING S ($558,800)** suman más de **$1.2M**.
+3. **Calidad de Proveedores:**
+   * Aunque el **InFull es del 100.4%**, el **OnTime es del 87.3%**, lo que indica que las demoras en entregas son el cuello de botella principal (12.7% de órdenes tardías).
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+* **Microsoft Power BI Desktop:** Modelado de datos, DAX y creación del dashboard.
+* **Power Query (ETL):** Limpieza, transformación y estandarización de campos.
+* **Excel / CSV:** Fuente de datos relacional inicial (`ORDENES`, `PROVEEDORES`, `PRODUCTOS`).
+* **DAX (Data Analysis Expressions):** Creación de medidas dinámicas y cálculo de KPIs logísticos.
+
+---
+
+## 🚀 Cómo Replicar este Proyecto
+
+1. **Clonar este repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/supply-chain-powerbi-analytics.git](https://github.com/tu-usuario/supply-chain-powerbi-analytics.git)
+
+2.  **Abrir la Base de Datos:**
+
+* **Revisa la carpeta /data para explorar el archivo 001 Compras.xlsx.
+
+3. **Ejecutar en Power BI:**
+
+* **Abre el archivo .pbix con Power BI Desktop.
+
+* **Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.
+
+##👤 Autor & Contacto
+Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.
+
+* **GitHub: @mikevargasrc
+
+* **LinkedIn: Maykol Anthony Vargas Bringas
+
+* **Email: maykolvargas98@hotmail.com
