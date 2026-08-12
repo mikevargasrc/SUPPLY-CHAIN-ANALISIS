@@ -152,6 +152,6 @@ Desarrollado como proyecto de analítica para la optimización de procesos de Su
 
 * **GitHub:** @mikevargasrc
 
-* **LinkedIn:** Maykol Anthony Vargas Bringas
+* **LinkedIn:** www.linkedin.com/in/maykolvargasb
 
 * **Email:** maykolvargas98@hotmail.com
