@@ -146,7 +146,7 @@ El modelo sigue un diseño en **Esquema en Estrella (*Star Schema*)** para garan
 
 * Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.
 
-##👤 Autor & Contacto
+## 👤 Autor & Contacto
 
 Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.
 
