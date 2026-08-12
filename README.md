@@ -1,4 +1,4 @@
-"""# 📦 Supply Chain & Procurement Analytics Dashboard (Power BI)
+# 📦 Supply Chain & Procurement Analytics Dashboard (Power BI)
 
 [![Power BI](https://img.shields.io/badge/Power_BI-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 [![Data Model](https://img.shields.io/badge/Model-Star_Schema-blue?style=for-the-badge)](https://en.wikipedia.org/wiki/Star_schema)
