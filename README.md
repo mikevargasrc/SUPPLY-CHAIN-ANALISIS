@@ -134,23 +134,23 @@ El modelo sigue un diseño en **Esquema en Estrella (*Star Schema*)** para garan
 
 1. **Clonar este repositorio:**
    ```bash
-   git clone [https://github.com/tu-usuario/supply-chain-powerbi-analytics.git](https://github.com/tu-usuario/supply-chain-powerbi-analytics.git)
+   git clone [https://github.com/mikevargasrc/SUPPLY-CHAIN-ANALISIS.git](https://github.com/mikevargasrc/SUPPLY-CHAIN-ANALISIS.git)
 
 2.  **Abrir la Base de Datos:**
 
-* **Revisa la carpeta /data para explorar el archivo 001 Compras.xlsx.
+* **Revisa la carpeta /data para explorar el archivo 001 Compras.xlsx.**
 
 3. **Ejecutar en Power BI:**
 
-* **Abre el archivo .pbix con Power BI Desktop.
+* **Abre el archivo .pbix con Power BI Desktop.**
 
-* **Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.
+* **Si es necesario, actualiza la ruta del origen de datos desde Transformar Datos > Configuración del origen de datos.**
 
 ##👤 Autor & Contacto
-Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.
+**Desarrollado como proyecto de analítica para la optimización de procesos de Supply Chain y Procurement.**
 
-* **GitHub: @mikevargasrc
+* **GitHub: @mikevargasrc**
 
-* **LinkedIn: Maykol Anthony Vargas Bringas
+* **LinkedIn: Maykol Anthony Vargas Bringas**
 
-* **Email: maykolvargas98@hotmail.com
+* **Email: maykolvargas98@hotmail.com**
